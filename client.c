@@ -124,6 +124,11 @@
             exit(1);
         }
 
+        if(send(sockfd, "Hola Server!\n", 14, 0) == -1){
+            perror("send");
+            exit(1);
+        }
+
         if ((numbytes=recv(sockfd, buf, MAXDATASIZE-1, 0)) == -1) {
             perror("recv");
             exit(1);
